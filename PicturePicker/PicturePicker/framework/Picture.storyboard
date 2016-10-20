@@ -70,34 +70,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uD1-TS-z5c">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uD1-TS-z5c">
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fkG-Bk-p14">
-                                    <size key="itemSize" width="264" height="354"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="fkG-Bk-p14">
+                                    <size key="itemSize" width="375" height="347"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PreviewPictureCell" id="2h4-wx-VQa" customClass="PreviewPictureCell">
-                                        <rect key="frame" x="0.0" y="147" width="264" height="354"/>
+                                        <rect key="frame" x="0.0" y="150" width="375" height="347"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="264" height="354"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="347"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8ml-YT-pQQ"/>
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" bounces="NO" alwaysBounceVertical="YES" minimumZoomScale="0.5" maximumZoomScale="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="McH-6D-o8O">
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8J-yR-wle" userLabel="Content View">
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d4x-fh-9b0"/>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="d4x-fh-9b0" secondAttribute="bottom" id="01b-Al-T0f"/>
+                                                                <constraint firstAttribute="height" constant="354" id="U7R-wn-Kzo"/>
+                                                                <constraint firstItem="d4x-fh-9b0" firstAttribute="top" secondItem="O8J-yR-wle" secondAttribute="top" id="ePG-ug-GNo"/>
+                                                                <constraint firstAttribute="trailing" secondItem="d4x-fh-9b0" secondAttribute="trailing" id="mj6-TU-lTb"/>
+                                                                <constraint firstItem="d4x-fh-9b0" firstAttribute="leading" secondItem="O8J-yR-wle" secondAttribute="leading" id="u2Y-02-cTv"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="O8J-yR-wle" firstAttribute="top" secondItem="McH-6D-o8O" secondAttribute="top" id="LEm-jP-ko8"/>
+                                                        <constraint firstAttribute="trailing" secondItem="O8J-yR-wle" secondAttribute="trailing" id="Ohe-Xq-hzp"/>
+                                                        <constraint firstItem="O8J-yR-wle" firstAttribute="leading" secondItem="McH-6D-o8O" secondAttribute="leading" id="WKg-c3-Ef7"/>
+                                                        <constraint firstAttribute="bottom" secondItem="O8J-yR-wle" secondAttribute="bottom" id="xAJ-cS-Xvb"/>
+                                                    </constraints>
+                                                </scrollView>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="8ml-YT-pQQ" firstAttribute="leading" secondItem="2h4-wx-VQa" secondAttribute="leading" id="It7-cr-0kT"/>
-                                            <constraint firstAttribute="bottom" secondItem="8ml-YT-pQQ" secondAttribute="bottom" id="jmY-lh-Apa"/>
-                                            <constraint firstItem="8ml-YT-pQQ" firstAttribute="top" secondItem="2h4-wx-VQa" secondAttribute="top" id="pEU-CI-hSa"/>
-                                            <constraint firstAttribute="trailing" secondItem="8ml-YT-pQQ" secondAttribute="trailing" id="xxd-d3-V47"/>
+                                            <constraint firstItem="McH-6D-o8O" firstAttribute="top" secondItem="2h4-wx-VQa" secondAttribute="top" id="3sK-9s-Lii"/>
+                                            <constraint firstItem="McH-6D-o8O" firstAttribute="leading" secondItem="2h4-wx-VQa" secondAttribute="leading" id="6jV-Cy-lhh"/>
+                                            <constraint firstItem="O8J-yR-wle" firstAttribute="width" secondItem="2h4-wx-VQa" secondAttribute="width" id="ajg-Yv-gFP"/>
+                                            <constraint firstAttribute="trailing" secondItem="McH-6D-o8O" secondAttribute="trailing" id="fuy-0x-LmA"/>
+                                            <constraint firstAttribute="bottom" secondItem="McH-6D-o8O" secondAttribute="bottom" id="mg7-vk-cXx"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="imageView" destination="8ml-YT-pQQ" id="fL7-bK-tGs"/>
+                                            <outlet property="contentViewHeightContraint" destination="U7R-wn-Kzo" id="apS-re-EVL"/>
+                                            <outlet property="customContentView" destination="O8J-yR-wle" id="Jcm-vq-Aj9"/>
+                                            <outlet property="imageView" destination="d4x-fh-9b0" id="Vub-Vv-ooS"/>
+                                            <outlet property="scrollView" destination="McH-6D-o8O" id="Ryp-kc-JPI"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -121,7 +147,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o08-qN-yIJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2487" y="-544"/>
+            <point key="canvasLocation" x="2485.5999999999999" y="-545.57721139430294"/>
         </scene>
     </scenes>
 </document>

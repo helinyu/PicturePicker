@@ -13,7 +13,8 @@
 
 + (void)requestAllPhotoFromAlbumWithALAssetsGroup:(ALAssetsGroupResultsBlock)resultBlock {
     
-    [[OBTAIN_SERVICE(ALAssetLibraryService) defaultALAssetLibrary] enumerateGroupsWithTypes:ALAssetsGroupAll usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
+//    这里选择相册，还有其他的选项看看是怎么样进行选择
+    [[OBTAIN_SERVICE(ALAssetLibraryService) defaultALAssetLibrary] enumerateGroupsWithTypes:ALAssetsGroupAlbum usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
         resultBlock(group);
         
     } failureBlock:^(NSError *error) {

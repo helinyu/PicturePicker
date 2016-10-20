@@ -98,16 +98,14 @@
         NSLog(@"group is : %@",resultOfGroup);
         _picturesALGroupSources = [ALAssetsGroup new];
         _picturesALGroupSources = resultOfGroup;
+        _numberOfAsset = resultOfGroup.numberOfAssets;
         [resultOfGroup enumerateAssetsUsingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
             if ( result == nil || index == NSIntegerMax || index == NSUIntegerMax ) {
                 [self.displayCollectionView reloadData];
                 return ;
             }
             [_pictureSources addObject:result];
-            _numberOfAsset = resultOfGroup.numberOfAssets;
-
             choiceNumberAndAllRatio_DisplayOnTitle
-
         }];
     }];
 }
