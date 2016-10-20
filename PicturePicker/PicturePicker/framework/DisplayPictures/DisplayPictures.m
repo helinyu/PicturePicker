@@ -238,6 +238,7 @@
     PreviewPictures *previewPictures = [[UIStoryboard storyboardWithName:PictureStoryName bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([PreviewPictures class])];
     [previewPictures passValueToDatasource:_pictureSources];
     [previewPictures passValueToGroupDatasource:_picturesALGroupSources];
+    previewPictures.clickedIndex = index;
     
     if (self.navigationController) {
         [self.navigationController pushViewController:previewPictures animated:true];

@@ -15,6 +15,8 @@
 - (void)passValueToGroupDatasource:(ALAssetsGroup *)datasource ;
 - (void)passValueToDatasource:(NSArray<ALAsset*> *)assests withGroupDataSource:(ALAssetsGroup *)assetsGroup;
 
+@property (assign, nonatomic) NSInteger clickedIndex;
+
 @end
 
 @interface PreviewPictureCell : UICollectionViewCell

@@ -86,7 +86,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="347"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" bounces="NO" alwaysBounceVertical="YES" minimumZoomScale="0.5" maximumZoomScale="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="McH-6D-o8O">
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" minimumZoomScale="0.5" maximumZoomScale="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="McH-6D-o8O">
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8J-yR-wle" userLabel="Content View">
                                                             <subviews>
@@ -121,6 +121,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="contentViewHeightContraint" destination="U7R-wn-Kzo" id="apS-re-EVL"/>
+                                            <outlet property="contentViewToTopConstraint" destination="LEm-jP-ko8" id="uv0-XG-cda"/>
                                             <outlet property="customContentView" destination="O8J-yR-wle" id="Jcm-vq-Aj9"/>
                                             <outlet property="imageView" destination="d4x-fh-9b0" id="Vub-Vv-ooS"/>
                                             <outlet property="scrollView" destination="McH-6D-o8O" id="Ryp-kc-JPI"/>

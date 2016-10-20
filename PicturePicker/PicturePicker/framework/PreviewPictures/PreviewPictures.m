@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewHeightContraint;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *customContentView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewToTopConstraint;
 
 @end
 
@@ -64,6 +65,19 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:_clickedIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:false];
+}
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+}
+
 #pragma mark -- uicollectionView datasource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -75,16 +89,22 @@
     
     
     CGFloat cellFrameWith = self.collectionView.frame.size.width;
-    CGFloat cellFrameHeight = self.collectionView.frame.size.width;
-    CGFloat cellWith = cellFrameWith;
+    CGFloat cellFrameHeight = self.collectionView.frame.size.height;
+//    CGFloat cellWith = cellFrameWith;
     CGFloat cellHeight = cellFrameHeight;
     ALAssetRepresentation *itemRepresentation = [_datasources[indexPath.row] defaultRepresentation];
     if (itemRepresentation.dimensions.width > cellFrameWith ) {
         cellHeight = cellFrameHeight * itemRepresentation.dimensions.height / itemRepresentation.dimensions.width;
-        if (cellHeight <= cellFrameHeight) {
-            cellHeight = cellFrameHeight;
-        }
+    }else{
+       cellHeight = CGRectGetHeight(pictureCell.bounds);
     }
+    
+    if (cellHeight < cellFrameHeight) {
+        pictureCell.contentViewToTopConstraint.constant = (cellFrameHeight - cellHeight ) / 2;
+    }else{
+        pictureCell.contentViewToTopConstraint.constant = 0;
+    }
+
     pictureCell.contentViewHeightContraint.constant = cellHeight;
 //    self.collectionView.bounds = CGRectMake(0, 0, cellWith, cellHeight);
     pictureCell.imageView.image =[UIImage imageWithCGImage:[[_datasources[indexPath.row] defaultRepresentation] fullResolutionImage]];
@@ -95,42 +115,8 @@
 #pragma mark -- uicollecitonViewDelegateLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-//    先计算大小
-    
-    ALAsset *assetItem = _datasources[indexPath.row];
-//    NSLog(@"%@",[assetItem valueForProperty:ALAssetPropertyType]); //获取到资源的类型
-//    NSLog(@"%@",[assetItem valueForProperty:ALAssetPropertyLocation]); //获取到资源的类型
-//    NSLog(@"%@",[assetItem valueForProperty:ALAssetPropertyDuration]); //获取到资源的类型
-//    NSLog(@"%@",[assetItem valueForProperty:ALAssetPropertyOrientation]); //获取到资源的类型
-//    NSLog(@"%@",[assetItem valueForProperty:ALAssetPropertyDate]); //获取到资源的类型
-//    NSLog(@"%@",[assetItem valueForProperty:ALAssetPropertyRepresentations]); //获取到资源的类型
-//    NSLog(@"%@",[assetItem valueForProperty:ALAssetPropertyURLs]); //获取到资源的类型
-//    NSLog(@"%@",[assetItem valueForProperty:ALAssetPropertyAssetURL]); //获取到资源的类型
-//    1）通过SDWebImage里面的内容进通过url获取图片
-//    2）通过陈述的方式 ALAssetRepresentation
-    ALAssetRepresentation *itemRepresentation = [assetItem defaultRepresentation];
-//    NSLog(@"%@",itemRepresentation.UTI);
-//    NSLog(@"%lld",itemRepresentation.size);
-//    NSLog(@"%lld",itemRepresentation.dimensions);
-//    NSLog(@"%@",itemRepresentation.fullResolutionImage);
-//    NSLog(@"%@",itemRepresentation.fullScreenImage);
-//    NSLog(@"%@",itemRepresentation.url);
-//    NSLog(@"%@",itemRepresentation.metadata);
-//    NSLog(@"%f",itemRepresentation.scale);
-//    NSLog(@"%@",itemRepresentation.filename);
-//    NSLog(@"%ld",(long)itemRepresentation.orientation);
-//    CGFloat cellFrameWith = self.collectionView.frame.size.width;
-//    CGFloat cellFrameHeight = self.collectionView.frame.size.width;
-//    CGFloat cellWith = cellFrameWith;
-//    CGFloat cellHeight = cellFrameHeight;
-//    if (itemRepresentation.dimensions.width > cellFrameWith ) {
-//        cellHeight = cellFrameHeight * itemRepresentation.dimensions.height / itemRepresentation.dimensions.width;
-//        if (cellHeight <= cellFrameHeight) {
-//            cellHeight = cellFrameHeight;
-//        }
-//    }
     return self.collectionView.bounds.size;
-//    return CGSizeMake(cellWith, cellHeight);
+//    注意理解collectionView的bounds概念（边沿：即为看到的边沿）
 }
 
 @end
