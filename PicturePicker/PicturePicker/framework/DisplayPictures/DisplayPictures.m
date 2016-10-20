@@ -36,6 +36,7 @@
     ALAssetsGroup *_picturesALGroupSources;
     NSInteger _numberOfAsset;
     NSMutableArray * _selectIndeses;
+    NSMutableArray<ALAsset*>* _selectedSources;
     PicturesDisplayStyle _picturesDisplayStyle;
 }
 @property (weak, nonatomic) IBOutlet UICollectionView *displayCollectionView;
@@ -85,7 +86,7 @@
 - (void)configureNomalVariables {
     _pictureSources = [NSMutableArray<ALAsset*> new];
     _selectIndeses = [NSMutableArray new];
-    
+    _selectedSources = [NSMutableArray<ALAsset*> new];
     
     if (_numberOfcolumn <= 0) {
         _numberOfcolumn = CELL_NUMBER_PER_ROW;
@@ -114,6 +115,15 @@
     
 - (void)onPicturePreview:(UIBarButtonItem *) btnItem {
     NSLog(@"预览选择的图片");
+    NSLog(@"selectinde xis : %@",_selectIndeses);
+    
+    PreviewPictures *previewPictures = [[UIStoryboard storyboardWithName:@"Picture" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([PreviewPictures class])];
+    [previewPictures passValueToDatasource:_selectedSources];
+    if (self.navigationController) {
+        [self.navigationController pushViewController:previewPictures animated:true];
+    }else{
+        [self presentViewController:previewPictures animated:false completion:nil];
+    }
 }
     
 - (void)pictureChoiceHasFinished:(UIBarButtonItem *)btnItem {
@@ -125,6 +135,7 @@
     for ( NSInteger index =0 ;index <_selectIndeses.count; index++ ) {
         NSInteger sourceIndex = [_selectIndeses[index] integerValue];
         [datasource addObject:_pictureSources[sourceIndex]];
+        [_selectedSources addObject:_pictureSources[sourceIndex]];
     }
     _datasoucesCallback(datasource);
 
@@ -217,15 +228,18 @@
     NSIndexPath *selectIndexPath = [NSIndexPath indexPathForRow:index inSection:0];
     if (selected) {
         [_selectIndeses addObject:@(index)];
+        [_selectedSources addObject:_pictureSources[index]];
     }else{
         for (NSInteger inlineIndex = 0; inlineIndex < _selectIndeses.count; inlineIndex++ ) {
             if ([_selectIndeses[inlineIndex] isEqual:@(index)]) {
                 [_selectIndeses removeObjectAtIndex:inlineIndex];
+                [_selectedSources removeObjectAtIndex:inlineIndex];
                 break;
             }
         }
     }
     [self.displayCollectionView reloadItemsAtIndexPaths:@[selectIndexPath]];
+    _numberOfAsset = _pictureSources.count;
     choiceNumberAndAllRatio_DisplayOnTitle
     return true;
 }
