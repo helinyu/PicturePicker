@@ -76,11 +76,18 @@
         
         UIBarButtonItem *backLeftBarItem = [[UIBarButtonItem alloc] initWithTitle:back_navitaion_text style:UIBarButtonItemStylePlain target:self action:@selector(goBack)];
         backLeftBarItem.tintColor = [UIColor grayColor];
-        UIBarButtonItem *leftLastSecondItem = [[UIBarButtonItem alloc] initWithTitle:preview_all_text style:UIBarButtonItemStylePlain target:self action:@selector(previewAllPictures:)];
-        leftLastSecondItem.tintColor = [UIColor blueColor];
-        self.navigationItem.leftBarButtonItems = @[backLeftBarItem,leftLastSecondItem];
+//        UIBarButtonItem *leftLastSecondItem = [[UIBarButtonItem alloc] initWithTitle:preview_all_text style:UIBarButtonItemStylePlain target:self action:@selector(previewAllPictures:)];
+//        leftLastSecondItem.tintColor = [UIColor blueColor];
+        self.navigationItem.leftBarButtonItems = @[backLeftBarItem];
+        
+        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(returnBack:)];
     }
+}
 
+#pragma mark -- UIBarbutton
+
+- (void)returnBack:(UIBarButtonItem*)btnItem {
+    NSLog(@"return back");
 }
 
 - (void)configureNomalVariables {
@@ -91,6 +98,8 @@
     if (_numberOfcolumn <= 0) {
         _numberOfcolumn = CELL_NUMBER_PER_ROW;
     }
+    
+    
 
 }
 

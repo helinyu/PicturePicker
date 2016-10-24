@@ -54,12 +54,17 @@
     [super viewDidLoad];
 
     [self initVariables];
-
 }
 
 - (void) initVariables {
     self.automaticallyAdjustsScrollViewInsets = false;
+    
+    self.navigationItem.title = @"图片预览";
+    
+    UIBarButtonItem *nowDisplayItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(displayCount:)];
+    self.navigationItem.rightBarButtonItem = nowDisplayItem;
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -78,6 +83,12 @@
     [super viewWillLayoutSubviews];
 }
 
+#pragma mark -- uibarbutton 
+
+- (void)displayCount:(UIBarButtonItem *)item {
+    NSLog(@"display count");
+}
+
 #pragma mark -- uicollectionView datasource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -90,7 +101,6 @@
     
     CGFloat cellFrameWith = self.collectionView.frame.size.width;
     CGFloat cellFrameHeight = self.collectionView.frame.size.height;
-//    CGFloat cellWith = cellFrameWith;
     CGFloat cellHeight = cellFrameHeight;
     ALAssetRepresentation *itemRepresentation = [_datasources[indexPath.row] defaultRepresentation];
     if (itemRepresentation.dimensions.width > cellFrameWith ) {
@@ -106,7 +116,6 @@
     }
 
     pictureCell.contentViewHeightContraint.constant = cellHeight;
-//    self.collectionView.bounds = CGRectMake(0, 0, cellWith, cellHeight);
     pictureCell.imageView.image =[UIImage imageWithCGImage:[[_datasources[indexPath.row] defaultRepresentation] fullResolutionImage]];
     
     return pictureCell;
@@ -118,5 +127,12 @@
     return self.collectionView.bounds.size;
 //    注意理解collectionView的bounds概念（边沿：即为看到的边沿）
 }
+
+#pragma mark -- UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(8_0) {
+    self.navigationItem.rightBarButtonItem.title = [NSString stringWithFormat:@"%d/%d",indexPath.row + 1,_datasources.count ];
+}
+
 
 @end
