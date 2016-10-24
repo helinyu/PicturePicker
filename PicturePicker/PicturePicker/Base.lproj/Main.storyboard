@@ -57,12 +57,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QXL-ZA-2TM" userLabel="line View">
+                                <color key="backgroundColor" red="1" green="0.79215686269999996" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="Q2Y-7Y-BgC"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="tPe-QB-TeP" secondAttribute="leading" constant="5" id="5zG-hu-Ace"/>
                             <constraint firstItem="tPe-QB-TeP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="Ard-qF-WjO"/>
                             <constraint firstItem="4d7-li-yEB" firstAttribute="leading" secondItem="rMX-jg-Cyg" secondAttribute="trailing" constant="2" id="BRK-tj-aN9"/>
+                            <constraint firstAttribute="trailing" secondItem="QXL-ZA-2TM" secondAttribute="trailing" id="KTn-ay-9iA"/>
                             <constraint firstItem="7Vp-09-pR5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="MFF-iV-p5V"/>
                             <constraint firstItem="ZdG-Yz-H3n" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="67" id="ZKk-HC-EhA"/>
                             <constraint firstAttribute="trailing" secondItem="4d7-li-yEB" secondAttribute="trailing" constant="20" id="bCb-hG-eL2"/>
@@ -71,6 +78,8 @@
                             <constraint firstAttribute="trailing" secondItem="ZdG-Yz-H3n" secondAttribute="trailing" constant="10" id="iR1-fJ-slX"/>
                             <constraint firstItem="4d7-li-yEB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="kkf-Kk-Buh"/>
                             <constraint firstItem="rMX-jg-Cyg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="q1b-i0-eUg"/>
+                            <constraint firstItem="QXL-ZA-2TM" firstAttribute="top" secondItem="ZdG-Yz-H3n" secondAttribute="bottom" constant="10" id="t16-Ee-v4B"/>
+                            <constraint firstItem="QXL-ZA-2TM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zQk-VJ-1Bo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0F3-lD-GNx"/>

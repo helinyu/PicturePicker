@@ -14,6 +14,7 @@
 #define back_navitaion_text @"返回"
 #define preview_all_text @"预览全部"
 
+#define Dismiss_Back [self dismissViewControllerAnimated:true completion:nil];
 
 #define PictureStoryName @"Picture"
 

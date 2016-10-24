@@ -13,7 +13,7 @@
 #import "FrameworkDefinition.h"
 #import "PreviewPictures.h"
 
-#define choiceNumberAndAllRatio_DisplayOnTitle self.navigationItem.title = [NSString stringWithFormat:@"%lu/%d",(unsigned long)_selectIndeses.count,_numberOfAsset];
+#define choiceNumberAndAllRatio_DisplayOnTitle (self.navigationItem.title=[NSString stringWithFormat:@"%lu/%d",(unsigned long)_selectIndeses.count,_numberOfAsset]);
 
 
 #define String(CellCalssName) NSStringFromClass([CellCalssName class])
@@ -256,7 +256,7 @@
 #pragma mark -- selectedPicturesDelegate
 
 - (BOOL)previewPictureAtIndex:(NSInteger)index {
-    NSLog(@"index: %d",index);
+    NSLog(@"index: %ld",(long)index);
     
     PreviewPictures *previewPictures = [[UIStoryboard storyboardWithName:PictureStoryName bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([PreviewPictures class])];
     [previewPictures passValueToDatasource:_pictureSources];
