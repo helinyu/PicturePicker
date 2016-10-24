@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import <Photos/Photos.h>
+#import "Helper+System.h"
 #import "CreateServiceObjectFactory.h"
 
 @interface PictureDatasources : NSObject

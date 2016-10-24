@@ -45,7 +45,6 @@
 - (IBAction)onDisplayPhotoLibraryClicked:(id)sender {
     
     if (_displayStyle == PicturesDisplayStyleOutSide) {
-        
         UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"选择" delegate:self cancelButtonTitle:@"取消"destructiveButtonTitle:nil otherButtonTitles:@"相机",@"相册", nil];
                 [actionSheet showInView:self.view];
         return;
@@ -85,16 +84,14 @@
     NSLog(@"取消");
 }
 
+
+//获取到图片 通过相册或者相机
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex  // after animation
 {
-    NSLog(@"button Index is : %ld",(long)buttonIndex);
-    
     if(buttonIndex == 0) {
-//        拍照
     [[TakePictures new] showImagePickerFromViewController:self CompleteWithInfo:^(NSDictionary<NSString *,id> *info) {
         NSLog(@"%@",info);
     }];
-        
     }else {
         [self transToDisplayViewController];
     }

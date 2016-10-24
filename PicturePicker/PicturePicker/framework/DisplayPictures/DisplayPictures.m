@@ -13,7 +13,7 @@
 #import "FrameworkDefinition.h"
 #import "PreviewPictures.h"
 
-#define choiceNumberAndAllRatio_DisplayOnTitle (self.navigationItem.title=[NSString stringWithFormat:@"%lu/%d",(unsigned long)_selectIndeses.count,_numberOfAsset]);
+#define choiceNumberAndAllRatio_DisplayOnTitle  self.navigationItem.title=[NSString stringWithFormat:@"%lu/%ld",(unsigned long)_selectIndeses.count,(long)_numberOfAsset];
 
 
 #define String(CellCalssName) NSStringFromClass([CellCalssName class])
@@ -76,8 +76,6 @@
         
         UIBarButtonItem *backLeftBarItem = [[UIBarButtonItem alloc] initWithTitle:back_navitaion_text style:UIBarButtonItemStylePlain target:self action:@selector(goBack)];
         backLeftBarItem.tintColor = [UIColor grayColor];
-//        UIBarButtonItem *leftLastSecondItem = [[UIBarButtonItem alloc] initWithTitle:preview_all_text style:UIBarButtonItemStylePlain target:self action:@selector(previewAllPictures:)];
-//        leftLastSecondItem.tintColor = [UIColor blueColor];
         self.navigationItem.leftBarButtonItems = @[backLeftBarItem];
         
         self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(returnBack:)];
@@ -98,9 +96,6 @@
     if (_numberOfcolumn <= 0) {
         _numberOfcolumn = CELL_NUMBER_PER_ROW;
     }
-    
-    
-
 }
 
 - (void)configureDataSourceAtInitState {
