@@ -25,11 +25,12 @@
         [result enumerateObjectsUsingBlock:^(PHAsset * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             NSLog(@"result is : %@",obj);
             NSLog(@"idx : %lu",(unsigned long)idx);
-            NSLog(@"stop : %d",stop);
+//            NSLog(@"stop : %d",stop);
         }];
        
     }else{
-        [[OBTAIN_SERVICE(ALAssetLibraryService) defaultALAssetLibrary] enumerateGroupsWithTypes:ALAssetsGroupAlbum usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
+//        [[OBTAIN_SERVICE(ALAssetLibraryService) defaultALAssetLibrary] enumerateGroupsWithTypes:ALAssetsGroupAlbum usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
+        [[OBTAIN_SERVICE(ALAssetLibraryService) defaultALAssetLibrary] enumerateGroupsWithTypes:ALAssetsGroupAll usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
             resultBlock(group);
             
         } failureBlock:^(NSError *error) {
