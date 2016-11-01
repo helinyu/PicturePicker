@@ -19,6 +19,7 @@
 		DCB188AD1DB794E900FAA836 /* PreviewPictures.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB188AC1DB794E900FAA836 /* PreviewPictures.m */; };
 		DCBB50571DB7156700E787CF /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBB50561DB7156700E787CF /* Helper.m */; };
 		DCBB50631DB715FD00E787CF /* Helper+System.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBB50621DB715FD00E787CF /* Helper+System.m */; };
+		DCC204571DC89C8800E28843 /* PictureTaker.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC204561DC89C8800E28843 /* PictureTaker.m */; };
 		DCE7047B1DB4E95000376E82 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE7047A1DB4E95000376E82 /* main.m */; };
 		DCE7047E1DB4E95000376E82 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE7047D1DB4E95000376E82 /* AppDelegate.m */; };
 		DCE704811DB4E95000376E82 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE704801DB4E95000376E82 /* ViewController.m */; };
@@ -82,6 +83,8 @@
 		DCBB50561DB7156700E787CF /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
 		DCBB50611DB715FD00E787CF /* Helper+System.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Helper+System.h"; sourceTree = "<group>"; };
 		DCBB50621DB715FD00E787CF /* Helper+System.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Helper+System.m"; sourceTree = "<group>"; };
+		DCC204551DC89C8800E28843 /* PictureTaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureTaker.h; sourceTree = "<group>"; };
+		DCC204561DC89C8800E28843 /* PictureTaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureTaker.m; sourceTree = "<group>"; };
 		DCE704761DB4E95000376E82 /* PicturePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicturePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE7047A1DB4E95000376E82 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DCE7047C1DB4E95000376E82 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -141,12 +144,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DC2635481DBDB6E1002F8EDF /* TakePictures */ = {
+		DC2635481DBDB6E1002F8EDF /* PIctures Picker  */ = {
 			isa = PBXGroup;
 			children = (
 				DC2635491DBDB6F4002F8EDF /* PicturesPicker.h */,
 				DC26354A1DBDB6F4002F8EDF /* PicturesPicker.m */,
 			);
+			name = "PIctures Picker ";
 			path = TakePictures;
 			sourceTree = "<group>";
 		};
@@ -220,6 +224,15 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		DCC204541DC89C6B00E28843 /* Take pictures */ = {
+			isa = PBXGroup;
+			children = (
+				DCC204551DC89C8800E28843 /* PictureTaker.h */,
+				DCC204561DC89C8800E28843 /* PictureTaker.m */,
+			);
+			name = "Take pictures";
+			sourceTree = "<group>";
+		};
 		DCE7046D1DB4E95000376E82 = {
 			isa = PBXGroup;
 			children = (
@@ -290,10 +303,11 @@
 			children = (
 				DCB1888F1DB7614F00FAA836 /* FrameworkDefinition.h */,
 				DCF1B2721DB5F02A000B240D /* Picture.storyboard */,
-				DC2635481DBDB6E1002F8EDF /* TakePictures */,
+				DC2635481DBDB6E1002F8EDF /* PIctures Picker  */,
 				DCB188AA1DB794D400FAA836 /* PreviewPictures */,
 				DCB1889C1DB7944900FAA836 /* Components */,
 				DCBB50541DB7155900E787CF /* Helper */,
+				DCC204541DC89C6B00E28843 /* Take pictures */,
 				DCF1B2811DB5F042000B240D /* DisplayPictures */,
 				DCF1B2731DB5F02A000B240D /* Resources */,
 				DCF1B2751DB5F02A000B240D /* Services */,
@@ -638,6 +652,7 @@
 				DCB188A31DB7944900FAA836 /* DisplayPicturesCell.m in Sources */,
 				DCB1889A1DB7766300FAA836 /* PicturesDisplayStyleService.m in Sources */,
 				DCE704811DB4E95000376E82 /* ViewController.m in Sources */,
+				DCC204571DC89C8800E28843 /* PictureTaker.m in Sources */,
 				DCF1B2871DB5F042000B240D /* DisplayPictures.m in Sources */,
 				DCF1B2801DB5F02A000B240D /* ALAssetLibraryService.m in Sources */,
 				DCF1B2921DB61E4C000B240D /* CreateServiceObjectFactory.m in Sources */,

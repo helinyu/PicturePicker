@@ -9,6 +9,7 @@
 #import "DisplayPictures.h"
 #import "PicturesDisplayStyleService.h"
 #import "PicturesPicker.h"
+#import "PictureTaker.h"
 
 #define Dismiss_Back [self dismissViewControllerAnimated:true completion:nil];
 
@@ -99,6 +100,14 @@
 }
 
 - (IBAction)onTakePicturesClicked:(id)sender {
+    
+    PictureTaker *pp = [[UIStoryboard storyboardWithName:@"Picture" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([PictureTaker class])];
+    if (self.navigationController) {
+        [self.navigationController pushViewController:pp animated:true];
+    }else{
+        [self presentViewController:pp animated:true completion:nil];
+    }
+    
 }
 
 @end
