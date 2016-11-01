@@ -10,7 +10,7 @@
 		68418D5A132A516AEC2C9A2B /* libPods-PicturePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D966EC0B579E582992E646D /* libPods-PicturePicker.a */; };
 		C84397A9D22587136BE2EB30 /* libPods-PicturePickerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B8A779A57AF2DCCA837CE6 /* libPods-PicturePickerUITests.a */; };
 		DC2635471DBDB673002F8EDF /* CameraService.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2635461DBDB673002F8EDF /* CameraService.m */; };
-		DC26354B1DBDB6F4002F8EDF /* TakePictures.m in Sources */ = {isa = PBXBuildFile; fileRef = DC26354A1DBDB6F4002F8EDF /* TakePictures.m */; };
+		DC26354B1DBDB6F4002F8EDF /* PicturesPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DC26354A1DBDB6F4002F8EDF /* PicturesPicker.m */; };
 		DCB1889A1DB7766300FAA836 /* PicturesDisplayStyleService.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB188991DB7766300FAA836 /* PicturesDisplayStyleService.m */; };
 		DCB188A31DB7944900FAA836 /* DisplayPicturesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB1889E1DB7944900FAA836 /* DisplayPicturesCell.m */; };
 		DCB188A41DB7944900FAA836 /* DisplayPicturesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCB1889F1DB7944900FAA836 /* DisplayPicturesCell.xib */; };
@@ -63,11 +63,10 @@
 		600C32CA110F6807313E3891 /* libPods-PicturePickerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PicturePickerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		917D1BD53BFFC0D5413DC9A9 /* Pods-PicturePickerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicturePickerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PicturePickerTests/Pods-PicturePickerTests.release.xcconfig"; sourceTree = "<group>"; };
 		C6B8A779A57AF2DCCA837CE6 /* libPods-PicturePickerUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PicturePickerUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC14CBB61DB893D8000CC186 /* PicturePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PicturePicker.h; sourceTree = "<group>"; };
 		DC2635451DBDB673002F8EDF /* CameraService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraService.h; sourceTree = "<group>"; };
 		DC2635461DBDB673002F8EDF /* CameraService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraService.m; sourceTree = "<group>"; };
-		DC2635491DBDB6F4002F8EDF /* TakePictures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakePictures.h; sourceTree = "<group>"; };
-		DC26354A1DBDB6F4002F8EDF /* TakePictures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakePictures.m; sourceTree = "<group>"; };
+		DC2635491DBDB6F4002F8EDF /* PicturesPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicturesPicker.h; sourceTree = "<group>"; };
+		DC26354A1DBDB6F4002F8EDF /* PicturesPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PicturesPicker.m; sourceTree = "<group>"; };
 		DCB1888F1DB7614F00FAA836 /* FrameworkDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FrameworkDefinition.h; path = DisplayPictures/FrameworkDefinition.h; sourceTree = "<group>"; };
 		DCB188981DB7766300FAA836 /* PicturesDisplayStyleService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicturesDisplayStyleService.h; sourceTree = "<group>"; };
 		DCB188991DB7766300FAA836 /* PicturesDisplayStyleService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PicturesDisplayStyleService.m; sourceTree = "<group>"; };
@@ -145,8 +144,8 @@
 		DC2635481DBDB6E1002F8EDF /* TakePictures */ = {
 			isa = PBXGroup;
 			children = (
-				DC2635491DBDB6F4002F8EDF /* TakePictures.h */,
-				DC26354A1DBDB6F4002F8EDF /* TakePictures.m */,
+				DC2635491DBDB6F4002F8EDF /* PicturesPicker.h */,
+				DC26354A1DBDB6F4002F8EDF /* PicturesPicker.m */,
 			);
 			path = TakePictures;
 			sourceTree = "<group>";
@@ -289,7 +288,6 @@
 		DCF1B26C1DB5F02A000B240D /* framework */ = {
 			isa = PBXGroup;
 			children = (
-				DC14CBB61DB893D8000CC186 /* PicturePicker.h */,
 				DCB1888F1DB7614F00FAA836 /* FrameworkDefinition.h */,
 				DCF1B2721DB5F02A000B240D /* Picture.storyboard */,
 				DC2635481DBDB6E1002F8EDF /* TakePictures */,
@@ -649,7 +647,7 @@
 				DCE7047E1DB4E95000376E82 /* AppDelegate.m in Sources */,
 				DCE7047B1DB4E95000376E82 /* main.m in Sources */,
 				DCF1B27F1DB5F02A000B240D /* BasicService.m in Sources */,
-				DC26354B1DBDB6F4002F8EDF /* TakePictures.m in Sources */,
+				DC26354B1DBDB6F4002F8EDF /* PicturesPicker.m in Sources */,
 				DCBB50571DB7156700E787CF /* Helper.m in Sources */,
 				DCB188AD1DB794E900FAA836 /* PreviewPictures.m in Sources */,
 			);

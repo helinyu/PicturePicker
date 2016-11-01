@@ -14,7 +14,7 @@
 @end
 
 
-@interface TakePictures : UIImagePickerController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface PicturesPicker : UIImagePickerController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 typedef void (^BackInfo)(NSDictionary<NSString *,id> * info);
 typedef void (^BackInfo)(NSDictionary<NSString *,id> * info);

@@ -8,7 +8,7 @@
 #import "ViewController.h"
 #import "DisplayPictures.h"
 #import "PicturesDisplayStyleService.h"
-#import "TakePictures.h"
+#import "PicturesPicker.h"
 
 #define Dismiss_Back [self dismissViewControllerAnimated:true completion:nil];
 
@@ -89,13 +89,16 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex  // after animation
 {
     if(buttonIndex == 0) {
-    [[TakePictures new] showImagePickerFromViewController:self CompleteWithInfo:^(NSDictionary<NSString *,id> *info) {
+    [[PicturesPicker new] showImagePickerFromViewController:self CompleteWithInfo:^(NSDictionary<NSString *,id> *info) {
         NSLog(@"%@",info);
     }];
     }else {
         [self transToDisplayViewController];
     }
 
+}
+
+- (IBAction)onTakePicturesClicked:(id)sender {
 }
 
 @end

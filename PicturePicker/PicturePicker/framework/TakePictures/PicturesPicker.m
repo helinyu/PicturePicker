@@ -6,10 +6,10 @@
 //  Copyright © 2016年 felix. All rights reserved.
 //
 
-#import "TakePictures.h"
+#import "PicturesPicker.h"
 #import "CreateServiceObjectFactory.h"
 
-@interface TakePictures ()<UIAlertViewDelegate>
+@interface PicturesPicker ()<UIAlertViewDelegate>
 
 @property (nonatomic) BackInfo backInfo;
 @property (nonatomic) ALAssetsLibraryAssetForURLResultBlock assetResultBlock;
@@ -20,7 +20,7 @@
 
 @end
 
-@implementation TakePictures
+@implementation PicturesPicker
 
 - (void)viewDidLoad {
     [super viewDidLoad ];
@@ -28,7 +28,7 @@
 }
 
 - (void)showImagePickerFromViewController:(UIViewController *)viewController {
-    if (![TakePictures isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+    if (![PicturesPicker isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         NSLog(@"没有相应的设备功能");
         return;
     }
