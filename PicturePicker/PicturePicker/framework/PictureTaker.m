@@ -76,7 +76,11 @@
 }
 
 - (IBAction)onBackClicked:(id)sender {
-    
+    if (self.navigationController) {
+        [self.navigationController popViewControllerAnimated:true];
+    }else{
+        [self dismissViewControllerAnimated:true completion:nil];
+    }
 }
 
 @end

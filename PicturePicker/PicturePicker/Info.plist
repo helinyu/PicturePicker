@@ -47,5 +47,11 @@
     <string>请点击【好】以允许访问,不然将无法正常使用该功能哦</string>
     <key>NSPhotoLibraryUsageDescription</key>
     <string>请点击【好】以允许访问,不然将无法选择图片哦</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>此 App 需要您的同意才能读取媒体资料库</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>此 App 需要您的同意才能读取麦克风资源</string>
+    <key>NSCameraUsageDescription</key>
+    <string>此 App 需要您的同意才能读取相机资源</string>
 </dict>
 </plist>
