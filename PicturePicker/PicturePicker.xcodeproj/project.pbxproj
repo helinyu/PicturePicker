@@ -20,6 +20,7 @@
 		DCBB50571DB7156700E787CF /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBB50561DB7156700E787CF /* Helper.m */; };
 		DCBB50631DB715FD00E787CF /* Helper+System.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBB50621DB715FD00E787CF /* Helper+System.m */; };
 		DCC204571DC89C8800E28843 /* PictureTaker.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC204561DC89C8800E28843 /* PictureTaker.m */; };
+		DCC2045A1DC8BA1300E28843 /* AnotherPictureTaker.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC204591DC8BA1300E28843 /* AnotherPictureTaker.m */; };
 		DCE7047B1DB4E95000376E82 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE7047A1DB4E95000376E82 /* main.m */; };
 		DCE7047E1DB4E95000376E82 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE7047D1DB4E95000376E82 /* AppDelegate.m */; };
 		DCE704811DB4E95000376E82 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE704801DB4E95000376E82 /* ViewController.m */; };
@@ -85,6 +86,8 @@
 		DCBB50621DB715FD00E787CF /* Helper+System.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Helper+System.m"; sourceTree = "<group>"; };
 		DCC204551DC89C8800E28843 /* PictureTaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureTaker.h; sourceTree = "<group>"; };
 		DCC204561DC89C8800E28843 /* PictureTaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureTaker.m; sourceTree = "<group>"; };
+		DCC204581DC8BA1300E28843 /* AnotherPictureTaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnotherPictureTaker.h; sourceTree = "<group>"; };
+		DCC204591DC8BA1300E28843 /* AnotherPictureTaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnotherPictureTaker.m; sourceTree = "<group>"; };
 		DCE704761DB4E95000376E82 /* PicturePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicturePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE7047A1DB4E95000376E82 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DCE7047C1DB4E95000376E82 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -229,6 +232,8 @@
 			children = (
 				DCC204551DC89C8800E28843 /* PictureTaker.h */,
 				DCC204561DC89C8800E28843 /* PictureTaker.m */,
+				DCC204581DC8BA1300E28843 /* AnotherPictureTaker.h */,
+				DCC204591DC8BA1300E28843 /* AnotherPictureTaker.m */,
 			);
 			name = "Take pictures";
 			sourceTree = "<group>";
@@ -656,6 +661,7 @@
 				DCF1B2871DB5F042000B240D /* DisplayPictures.m in Sources */,
 				DCF1B2801DB5F02A000B240D /* ALAssetLibraryService.m in Sources */,
 				DCF1B2921DB61E4C000B240D /* CreateServiceObjectFactory.m in Sources */,
+				DCC2045A1DC8BA1300E28843 /* AnotherPictureTaker.m in Sources */,
 				DCF1B2951DB622D0000B240D /* PictureDatasources.m in Sources */,
 				DC2635471DBDB673002F8EDF /* CameraService.m in Sources */,
 				DCB188A51DB7944900FAA836 /* TakePictureCell.m in Sources */,

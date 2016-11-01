@@ -10,6 +10,7 @@
 #import "PicturesDisplayStyleService.h"
 #import "PicturesPicker.h"
 #import "PictureTaker.h"
+#import "AnotherPictureTaker.h"
 
 #define Dismiss_Back [self dismissViewControllerAnimated:true completion:nil];
 
@@ -109,5 +110,15 @@
     }
     
 }
+
+- (IBAction)onVedioClicked:(id)sender {
+    AnotherPictureTaker *aPT = [[UIStoryboard storyboardWithName:@"Picture" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([AnotherPictureTaker class])];
+    if (self.navigationController) {
+        [self.navigationController pushViewController:aPT animated:true];
+    }else{
+        [self presentViewController:aPT animated:true completion:nil];
+    }
+}
+
 
 @end
