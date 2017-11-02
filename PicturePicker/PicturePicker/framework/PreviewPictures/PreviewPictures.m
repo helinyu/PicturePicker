@@ -131,7 +131,7 @@
 #pragma mark -- UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(8_0) {
-    self.navigationItem.rightBarButtonItem.title = [NSString stringWithFormat:@"%d/%lu",indexPath.row + 1,(unsigned long)_datasources.count ];
+    self.navigationItem.rightBarButtonItem.title = [NSString stringWithFormat:@"%ld/%lu",indexPath.row + 1,(unsigned long)_datasources.count ];
 }
 
 
